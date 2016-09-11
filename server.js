@@ -21,7 +21,7 @@ var env = process.env.NODE_ENV || 'development';
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 app.use(morgan('combined'));
-app.use(express.static('./dist'));
+app.use(express.static(__dirname + '/dist'));
 
 app.locals.shared = {};
 app.use((req, resp, next) => {
