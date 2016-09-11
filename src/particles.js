@@ -92,7 +92,7 @@ var drawParticle = function (x, y, r, c) {
 // Remove particles that aren't on the canvas
 var cleanUpArray = function () {
     var len = particles.length;
-    particles = particles.filter((p) => {
+    particles = particles.filter(function(p) {
       return (p.x > -100 && p.y > -100);
     });
     var lenNew = particles.length;
@@ -107,7 +107,7 @@ var initParticles = function (numParticles, x, y) {
   for (let i = 0; i < numParticles; i++) {
         particles.push(new Particle(x, y));
     }
-    particles.forEach((p) => {
+    particles.forEach(function(p) {
         drawParticle(p.x, p.y, p.r, p.c);
     });
 };
@@ -128,11 +128,11 @@ var frame = function () {
   // Draw background first
   drawBg(ctx, colorPalette.bg);
   // Update Particle models to new position
-  particles.map((p) => {
+  particles.map(function(p) {
     return updateParticleModel(p);
   });
   // Draw em'
-  particles.forEach((p) => {
+  particles.forEach(function(p) {
       drawParticle(p.x, p.y, p.r, p.c);
   });
   // Play the same song? Ok!
