@@ -46,7 +46,7 @@ server.listen(PORT, (err) => {
     logger.info(`Server listening on port ${PORT}.`);
 
     logger.info('Logging in to get the token...');
-    request.post(config.API_URL_BASE + '/authentication', {
+    /*request.post(config.API_URL_BASE + '/authentication', {
         form: {
             account: config.API_USERNAME,
             password: config.API_PASSWORD
@@ -60,5 +60,5 @@ server.listen(PORT, (err) => {
 
         logger.info('Get token', body);
         app.locals.shared.token = body;
-    });
+    });*/
 });

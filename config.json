@@ -1,5 +1,5 @@
 {
-    "API_URL_BASE": "https://localhost:5566",
+    "API_URL_BASE": "https://api.ntuosc.org",
     "API_USERNAME": "club_ntuosc",
     "API_PASSWORD": "weLoveNTUOSC"
 }

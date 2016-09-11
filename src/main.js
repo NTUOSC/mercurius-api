@@ -1,4 +1,5 @@
 var Vue = require('vue');
+var request = require('request');
 
 var Par = require('./particles');
 
@@ -13,6 +14,7 @@ var app = new Vue({
     socket: null,
     disconnected: null,
     authStatus: null,
+    authData: null,
     authInfo: ''
   },
   created: function() {
@@ -31,9 +33,28 @@ var app = new Vue({
         self.disconnected = false;
     });
 
-    self.socket.on('auth checking', function() {
+    self.socket.on('auth recv', function(authData) {
         self.authStatus = 'checking';
-        console.log('checking!!');
+        self.authData = authData;
+        console.log('checking!!', authData);
+
+        doCheck(authData, {
+            authSuccess: function(msg) {
+                self.authStatus = 'success';
+                self.authInfo = JSON.stringify(msg);
+                // Par.init(2000);
+                Par.burstRandom();
+                rememberToSetItBack();
+                console.log('success!!', arguments);
+            },
+
+            authFailure: function(msg) {
+                self.authStatus = 'failure';
+                self.authInfo = JSON.stringify(msg);
+                rememberToSetItBack();
+                console.log('failure!!', arguments);
+            }
+        });
     });
 
     function reset() {
@@ -48,21 +69,54 @@ var app = new Vue({
         }
         stamp = setTimeout(reset, 6000);
     }
-
-    self.socket.on('auth success', function(msg) {
-        self.authStatus = 'success';
-        self.authInfo = JSON.stringify(msg);
-        // Par.init(2000);
-        Par.burstRandom();
-        rememberToSetItBack();
-        console.log('success!!', arguments);
-    });
-
-    self.socket.on('auth failure', function(msg) {
-        self.authStatus = 'failure';
-        self.authInfo = JSON.stringify(msg);
-        rememberToSetItBack();
-        console.log('failure!!', arguments);
-    });
   }
 });
+
+console.log(request);
+
+function doCheck(authData, cbs) {
+    var args = {};
+    args.token = authData.token;
+    args.personal = JSON.stringify({
+        id: authData.student_id
+    });
+    args.cardId = authData.card_id;
+
+    var rtn = {
+        ok: false
+    };
+
+    // POST /seeker ------------------------------------------------------
+    request.post('https://api.ntuosc.org/seeker', {
+        json: true,
+        form: args
+    }, function(err, ffresp, ffbody) {
+        if (ffresp.statusCode >= 400) {
+            // repeated!
+            console.warn('post /seeker failed -- may be duplicated card', ffbody);
+            rtn.joined = true;
+        }
+
+        // POST /stamp ------------------------------------------------------
+        request.post('https://api.ntuosc.org/stamp', {
+            json: true,
+            form: args
+        }, function(err, fffresp, fffbody) {
+            if (fffresp.statusCode >= 400) {
+                // repeated!
+                // whywhywhywhywhywhywhywhywhy
+                console.warn('post /stamp failed -- may be duplicated stamp', fffbody);
+                console.info('emit failure status to socket');
+                cbs.authFailure({
+                    reason: 'rejected',
+                    code: fffresp.statusCode
+                });
+                return;
+            }
+
+            rtn.ok = true;
+            rtn.resp = fffbody;
+            cbs.authSuccess(rtn);
+        });
+    });
+} 
