@@ -2,33 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Geocaching 2016 Client</title>
+    <title>Voting System CLient</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="app-wrapper">
-      <div id="app" v-cloak>
-        <canvas id="background-canvas"></canvas>
-        <main>
-          <div class="app-msg app-waiting" v-if="state == 'waiting'">Connecting...</div>
-          <div class="app-ok" v-if="state == 'ok'">
-            <div class="text-center">
-              <i class="material-icons app-big-icon" v-bind:class="{ 'app-icon-warning': disconnected || authStatus == 'failure', 'app-icon-success': authStatus == 'success' }">credit_card</i>
-            </div>
-            <div class="app-msg" v-if="!disconnected &amp;&amp; !authStatus">Please Scan Your Card :3</div>
-            <div class="app-msg" v-if="authStatus == 'checking'">Reading...</div>
-            <div class="app-msg error" v-if="authStatus == 'failure'">Auth failed...</div>
-            <div class="app-msg success" v-if="authStatus == 'success'">Success :D</div>
-            <div class="app-msg warning" v-if="disconnected">Connection is down :(</div>
-
-            <div class="app-p text-monospace" v-if="authInfo">{{ authInfo }}</div>
-          </div>
-        </main>
-        <div id="copyright" class="text-muted">NTUOSC</div>
+      <div id="name"></div>
+      <DIV ID="BTN">
+          <div id="message"></div>
+          <button id="accept" disabled>Accept</button>
+          <button id="reject" disabled>Reject</button>
       </div>
-    </div>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="build.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
