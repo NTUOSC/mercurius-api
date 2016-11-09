@@ -39,26 +39,23 @@ io.on('connection', (socket) => {
     logger.info('socket client connected');
     // XXX: will only respond to the last socket
     app.locals.shared.socket = socket;
+    var vote = require('./lib/vote');
+
+    socket.on('accept', (data) => {
+        // data should contains token, student_id
+        vote.confirm(data.student_id, data.token, function (message) {
+            socket.emit('message', message);  
+        });
+    });
+
+    socket.on('reject', (data) => {
+        vote.report(data.student_id, data.token, function (message) {
+            socket.emit('message', message);  
+        });
+    });
 });
 
 server.listen(PORT, (err) => {
     if (err) throw err;
     logger.info(`Server listening on port ${PORT}.`);
-
-    logger.info('Logging in to get the token...');
-    request.post(config.API_URL_BASE + '/authentication', {
-        form: {
-            account: config.API_USERNAME,
-            password: config.API_PASSWORD
-        }
-    }, (err, resp, body) => {
-        if (err) throw err;
-        if (resp.statusCode >= 400) {
-            logger.error('Auth failed; unable to get token', body);
-            return;
-        }
-
-        logger.info('Get token', body);
-        app.locals.shared.token = body;
-    });
 });
