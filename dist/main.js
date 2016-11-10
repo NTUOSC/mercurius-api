@@ -1,5 +1,5 @@
 $(function () {
-    var socket = io('http://localhost:8080');
+    var socket = io('http://localhost:8080/info');
     socket.on('card attach', function(data) {
         $('#name').text(data);
         $('#accept').prop( "disabled", false);
