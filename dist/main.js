@@ -13,7 +13,7 @@ socket.on('card attach', function(data) {
 });
 
 socket.on('message', function(data) {
-  $('#message').text(data);
+  $('#message').innerHTML = data;
 });
 
 // Connection ON
@@ -26,16 +26,16 @@ socket.on('reconnect', function () {
 
 // Connection OFF
 socket.on('disconnect', function () {
-  $('#message').text('Connection DOWN');
+  $('#message').innerHTML = 'Connection DOWN';
 });
 
-$('#accept').click(function () {
+$('#accept').addEventListener('click', function (ev) {
   socket.emit('accept');
   $('#accept').setAttribute('disabled', true);
   $('#reject').setAttribute('disabled', true);
 });
 
-$('#reject').click(function () {
+$('#reject').addEventListener('click', function (ev) {
   socket.emit('reject');
   $('#accept').setAttribute('disabled', true);
   $('#reject').setAttribute('disabled', true);
