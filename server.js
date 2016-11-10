@@ -25,7 +25,6 @@ app.use(morgan('combined'));
 app.use(express.static(__dirname + '/dist'));
 
 app.locals.shared = {};
-app.locals.shared.student = null;
 app.use((req, resp, next) => {
     // inject socket for each request to allow communications
     resp.locals.shared = app.locals.shared;
@@ -41,11 +40,39 @@ io.on('connection', (socket) => {
     logger.info('socket client connected');
     // XXX: will only respond to the last socket
     app.locals.shared.socket = socket;
+    var vote = require('./lib/vote');
+
+    if (app.locals.shared.student != null) {
+        socket.emit('card attach', student.id + '@' + student.type);
+    }
+
+    socket.on('accept', () => {
+        var student = app.locals.shared.student;
+
+        logger.debug('Acccept');
+        logger.info('accept student' + student.id);
+
+        vote.confirm(student.id, student.token, function (message) {
+            socket.emit('message', message);
+            app.locals.shared.student = null; // set it back to null for next one
+        });
+    });
+
+    socket.on('reject', () => {
+        var student = app.locals.shared.student;
+
+        logger.info('reject student' + student.id);
+        vote.report(student.id, student.token, function (message) {
+            socket.emit('message', message);  
+            app.locals.shared.student = null; // set it back to null for next one
+        });
+    });
 });
 
 server.listen(PORT, (err) => {
     if (err) throw err;
     logger.info(`Server listening on port ${PORT}.`);
+    app.locals.shared.student = null;
 
     vote.login(config.username, config.password);
 });
