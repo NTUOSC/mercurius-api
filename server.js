@@ -10,6 +10,7 @@ var morgan = require('morgan');
 var logger = require('./lib/logger');
 
 var config = require('./config');
+var vote = require('./lib/vote');
 var app = express();
 var server = http.Server(app);
 var io = socketIO(server);
@@ -72,4 +73,6 @@ server.listen(PORT, (err) => {
     if (err) throw err;
     logger.info(`Server listening on port ${PORT}.`);
     app.locals.shared.student = null;
+
+    vote.login(config.username, config.password);
 });
