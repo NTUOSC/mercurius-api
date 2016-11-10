@@ -1,37 +1,42 @@
-$(function () {
-    var socket = io('http://localhost:8080/info');
-    socket.on('card attach', function(data) {
-        $('#name').text(data);
-        $('#accept').prop( "disabled", false);
-        $('#reject').prop( "disabled", false);
-    });
+var $ = function (s) {
+  return document.querySelector(s);
+}
+var $$ = function (s) {
+  return document.querySelectorAll(s);
+}
 
-    socket.on('message', function(data) {
-        $('#message').text(data);
-    });
+var socket = io('http://localhost:8080/info');
+socket.on('card attach', function(data) {
+  $('#name').innerHTML = data;
+  $('#accept').removeAttribute('disabled');
+  $('#reject').removeAttribute('disabled');
+});
 
-    // Connection ON
-    socket.on('connect', function () {
-        $('#message').text('Connection ON');
-    });
-    socket.on('reconnect', function () {
-        $('#message').text('Connection ON');
-    });
+socket.on('message', function(data) {
+  $('#message').text(data);
+});
 
-    // Connection OFF
-    socket.on('disconnect', function () {
-        $('#message').text('Connection DOWN');
-    });
+// Connection ON
+socket.on('connect', function () {
+  $('#message').innerHTML = 'Connection ON';
+});
+socket.on('reconnect', function () {
+  $('#message').innerHTML = 'Connection ON';
+});
 
-    $('#accept').click(function () {
-        socket.emit('accept');
-        $('#accept').prop( "disabled", true);
-        $('#reject').prop( "disabled", true);
-    });
+// Connection OFF
+socket.on('disconnect', function () {
+  $('#message').text('Connection DOWN');
+});
 
-    $('#reject').click(function () {
-        socket.emit('reject');
-        $('#accept').prop( "disabled", true);
-        $('#reject').prop( "disabled", true);
-    });
+$('#accept').click(function () {
+  socket.emit('accept');
+  $('#accept').setAttribute('disabled', true);
+  $('#reject').setAttribute('disabled', true);
+});
+
+$('#reject').click(function () {
+  socket.emit('reject');
+  $('#accept').setAttribute('disabled', true);
+  $('#reject').setAttribute('disabled', true);
 });

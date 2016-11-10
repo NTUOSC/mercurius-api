@@ -1,139 +1,51 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: #f0f0f0;
-    color: #222;
-    font-size: 16px;
-    height: 100vh;
     box-sizing: border-box;
-    font-family: RobotoDraft, Roboto, 'Droid Sans Fallback', 'Source Han Sans', 'Noto Sans CJK TC', 'Microsoft JhengHei', sans-serif;
 }
 
 * {
     box-sizing: inherit;
-}
-
-[v-cloak], [data-v-cloak] {
-    display: none !important;
-}
-
-.text-muted { color: #ddd; }
-.text-center { text-align: center; }
-.text-monospace {
-    font-family: 'Source Code Pro', 'Roboto Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-/* ---------- */
-
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url(assets/material-design-icon.ttf) format('truetype');
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ---------- */
-
-#app-wrapper {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-#background-canvas {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-}
-
-main {
-    position: relative;
-}
-
-#app {
-    min-width: 40em;
-    margin-left: 24px;
-    margin-right: 24px;
-    padding: 32px 16px;
-    background: rgba(255, 255, 255, .8);
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
+    font-size: 24px;
     text-align: center;
 }
 
-#app .app-msg {
-    font-size: 2.4em;
-    line-height: 2;
-    font-weight: 300;
+body {
+  margin: 0 auto;
+  max-width: 72em;
+  position: relative;
+  width: 100%;
 }
 
-#app .app-msg.warning {
-    color: #F44336;
-}
-#app .app-msg.error {
-    color: #E91E63;
-}
-#app .app-msg.success {
-    color: #4CAF50;
-}
-
-#app .app-waiting {
-    color: #668;
-    animation: breathing 2.5s infinite;
+button {
+  background: #000;
+  border: #000 0.25em solid;
+  border-radius: 5px;
+  color: #FFF;
+  margin: 0.5em 1em;
+  padding : 0.25em 0.5em;
 }
 
-#app .app-big-icon {
-    color: white;
-    border-radius: 50%;
-    background-color: #2196F3;
-    font-size: 12rem;
-    padding: .8rem;
-    margin-bottom: 1rem;
-    animation: breathing-icon 2s infinite;
-    transition: all 400ms ease;
-    transition-property: background, color;
+button#accept {
+  background: #0D0;
+  border: #0D0 0.25em solid;
 }
 
-#app .app-icon-warning {
-    background: #FF5252;
+button#reject {
+  background: #D00;
+  border: #D00 0.25em solid;
 }
 
-#app .app-icon-success {
-    background: #00E676;
+button[disabled] {
+  background: #CCC !important;
+  border: #CCC 0.25em solid !important;
 }
 
-#app .app-p {
-    font-size: 1.2em;
-    line-height: 2em;
+button:hover, button:active {
+  background: #FFF !important;
+  color: #333;
 }
 
-#copyright {
-    margin-top: 2em;
-}
-
-@keyframes breathing {
-  0%   { color: rgba(0, 0, 0, .45); }
-  50%  { color: rgba(0, 0, 0, .87); }
-  100% { color: rgba(0, 0, 0, .45); }
-}
-
-@keyframes breathing-icon {
-  0%   { opacity: .4; }
-  50%  { opacity:  1; }
-  100% { opacity: .4; }
+section {
+  padding: 1em;
 }
