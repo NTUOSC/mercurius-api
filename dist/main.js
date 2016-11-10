@@ -26,10 +26,12 @@ $(function () {
     $('#accept').click(function () {
         socket.emit('accept');
         $('#accept').prop( "disabled", true);
+        $('#reject').prop( "disabled", true);
     });
 
     $('#reject').click(function () {
         socket.emit('reject');
+        $('#accept').prop( "disabled", true);
         $('#reject').prop( "disabled", true);
     });
 });
