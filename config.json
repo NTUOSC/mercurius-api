@@ -1,5 +1,9 @@
 {
-    "API_URL_BASE": "https://api.ntuosc.org",
-    "API_USERNAME": "club_ntuosc",
-    "API_PASSWORD": "weLoveNTUOSC"
+    "AUTH_API_URL": "http://localhost:8000/api",
+    "VOTE_API_URL": "http://httpbin.org/post",
+    "AUTH_API_KEY": "testapikey",
+    "VOTE_API_KEY": "",
+    "AUTH_API_VERSION": "2",
+    "username": "station",
+    "password": "station"
 }
