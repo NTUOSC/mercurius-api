@@ -2,19 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Voting System CLient</title>
+    <title>Voting System Client</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-      <div id="name"></div>
-      <div id="btn">
-          <div id="message"></div>
+      <section id="name"></section>
+      <section id="message"></section>
+      <section id="button-box">
           <button id="accept" disabled>Accept</button>
           <button id="reject" disabled>Reject</button>
-      </div>
-
+      </section>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
