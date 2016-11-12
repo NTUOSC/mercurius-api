@@ -1,5 +1,0 @@
-{
-    "API_URL_BASE": "http://localhost:8080/mock",
-    "API_USERNAME": "tester",
-    "API_PASSWORD": "tester"
-}
