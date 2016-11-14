@@ -5,7 +5,7 @@ var $$ = function (s) {
   return document.querySelectorAll(s);
 }
 
-var socket = io('http://localhost:8080/info');
+var socket = io('http://localhost:8080');
 socket.on('card attach', function(data) {
   $('#name').innerHTML = data;
   $('#accept').removeAttribute('disabled');
