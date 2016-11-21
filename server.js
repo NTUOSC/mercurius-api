@@ -25,7 +25,7 @@ app.use(express.static(__dirname + '/dist'));
 
 
 app.use(require('body-parser').urlencoded({ extended: true }));
-app.use('/api', api);
+app.use('/api', api.router);
 
 server.listen(PORT, (err) => {
     if (err) throw err;
