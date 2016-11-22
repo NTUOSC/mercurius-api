@@ -11,7 +11,7 @@ var l = function (string) {
 
 var socket = io('http://localhost:8080');
 socket.on('card attach', function(data) {
-  $('#name').innerHTML = l(data);
+  $('#name').innerHTML = data;
   $('#accept').removeAttribute('disabled');
   $('#reject').removeAttribute('disabled');
 });
