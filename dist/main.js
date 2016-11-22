@@ -1,32 +1,36 @@
 var $ = function (s) {
   return document.querySelector(s);
-}
+};
 var $$ = function (s) {
   return document.querySelectorAll(s);
-}
+};
+
+var l = function (string) {
+    return string.toLocaleString("zh_tw");
+};
 
 var socket = io('http://localhost:8080');
 socket.on('card attach', function(data) {
-  $('#name').innerHTML = data;
+  $('#name').innerHTML = l(data);
   $('#accept').removeAttribute('disabled');
   $('#reject').removeAttribute('disabled');
 });
 
 socket.on('message', function(data) {
-  $('#message').innerHTML = data;
+  $('#message').innerHTML = l(data);
 });
 
 // Connection ON
 socket.on('connect', function () {
-  $('#message').innerHTML = 'Connection ON';
+  $('#message').innerHTML = l('online');
 });
 socket.on('reconnect', function () {
-  $('#message').innerHTML = 'Connection ON';
+  $('#message').innerHTML = l('online');
 });
 
 // Connection OFF
 socket.on('disconnect', function () {
-  $('#message').innerHTML = 'Connection DOWN';
+  $('#message').innerHTML = l('offline');
 });
 
 $('#accept').addEventListener('click', function (ev) {
