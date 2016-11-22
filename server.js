@@ -33,4 +33,7 @@ server.listen(PORT, (err) => {
 
     vote.login(config.username, config.password);
 });
-api.io.attach(server);
+api.io.attach(server, {
+    'pingTimeout': 500,
+    'pingInterval': 3000
+});
