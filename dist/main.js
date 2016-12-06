@@ -39,7 +39,7 @@ socket.on('card attach', function(data) {
 
 socket.on('message', function(data) {
   $('#name').innerHTML = '';
-  $('#message').innerHTML = data;
+  $('#message').innerHTML = l(data);
   change_button_state('deactivate');
   timeout = setTimeout(clear_message, 5000);
 });
