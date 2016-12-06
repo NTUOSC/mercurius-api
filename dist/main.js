@@ -31,6 +31,7 @@ var timeout;
 var socket = io('http://localhost:8080');
 socket.on('card attach', function(data) {
   $('#name').innerHTML = data;
+  $('#message').innerHTML = '';
   // $('#name').innerHTML = data.id;
   // $('#message').innerHTML = data.type;
   change_button_state('activate');
