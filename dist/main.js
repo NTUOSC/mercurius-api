@@ -15,7 +15,7 @@ var clear_message = function () {
 
 var change_button_state = function (s) {
   var valid_action = { 'activate' : true, 'deactivate' : false };
-  if (valid_action[s]) {
+  if (!valid_action[s]) {
     $('#accept').setAttribute('disabled', true);
     $('#reject').setAttribute('disabled', true);
     $('#dismiss').removeAttribute('disabled');
