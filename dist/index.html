@@ -6,12 +6,18 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <section id="status-box">
+      <span id="status"></span>
+    </section>
+    <section id="message-box">
       <section id="name"></section>
       <section id="message"></section>
-      <section id="button-box">
-          <button id="accept" disabled>Accept</button>
-          <button id="reject" disabled>Reject</button>
-      </section>
+    </section>
+    <section id="button-box">
+      <div class="box-grid g1-2"><button id="accept" disabled>確認驗證</button></div>
+      <div class="box-grid g1-2"><button id="reject" disabled>終止驗證</button></div>
+      <div class="box-grid g1-1"><button id="dismiss">清除訊息</button></div>
+    </section>
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="json2.min.js"></script>
     <script src="l10n.min.js"></script>

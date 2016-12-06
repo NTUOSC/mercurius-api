@@ -1,44 +1,71 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 * {
-    box-sizing: inherit;
-    font-size: 24px;
-    text-align: center;
+  box-sizing: border-box;
+  font-family: Helvetica, 'Source Han Sans', 'Microsoft JhengHei', sans-serif;
+  font-size: 24px;
+  text-align: center;
 }
 
 body {
   margin: 0 auto;
-  max-width: 72em;
+  max-width: 36em;
+  min-width: 24em;
   position: relative;
   width: 100%;
 }
 
+div.box-grid {
+  display: inline-block;
+  margin: -0.01em;
+  padding: 0.125em;
+}
+
+div.box-grid.g1-2 {
+  width: 50%;
+}
+
+div.box-grid.g1-2:nth-child(2) {
+  margin-left: -0.25em;
+}
+
+div.box-grid.g1-1 {
+  width: 100%;
+}
+
 button {
-  background: #000;
-  border: #000 0.25em solid;
+  border: none;
   border-radius: 5px;
   color: #FFF;
-  margin: 0.5em 1em;
-  padding : 0.25em 0.5em;
+  display: inline;
+  padding: 0.5em 0.75em;
+  width: 100%;
 }
 
 button#accept {
-  background: #0D0;
-  border: #0D0 0.25em solid;
+  background: #8CC152;
+}
+
+button#accept.active {
+  background: #A0D468;
 }
 
 button#reject {
-  background: #D00;
-  border: #D00 0.25em solid;
+  background: #DA4453;
+}
+
+button#reject.active {
+  background: #ED5565;
+}
+
+button#dismiss {
+  background: #3BAFDA;
+}
+
+button#dismiss.active {
+  background: #4FC1E9;
 }
 
 button[disabled] {
-  background: #CCC !important;
-  border: #CCC 0.25em solid !important;
+  background: #BBB !important;
 }
 
 button:hover, button:active {
@@ -48,4 +75,20 @@ button:hover, button:active {
 
 section {
   padding: 1em;
+}
+
+section#status-box {
+  border-bottom: #DDD 1px solid;
+}
+
+section#status-box.online {
+  color: #0B0;
+}
+
+section#status-box.offline {
+  color: #0B0;
+}
+
+section#message-box {
+  height: 6em;
 }
