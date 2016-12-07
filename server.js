@@ -31,7 +31,7 @@ server.listen(PORT, (err) => {
     if (err) throw err;
     logger.info(`Server listening on port ${PORT}.`);
 
-    vote.login(config.username, config.password);
+    vote.login(config.username, config.password, (err, station) => {});
 });
 api.io.attach(server, {
     'pingTimeout': 500,
