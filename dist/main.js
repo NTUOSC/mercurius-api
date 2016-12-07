@@ -6,7 +6,11 @@ var $$ = function (s) {
 };
 
 var l = function (string) {
-    return string.toLocaleString("zh_tw");
+    if (string) {
+        return string.toLocaleString("zh_tw");
+    } else {
+        return string;
+    }
 };
 
 var clear_message = function () {
