@@ -33,11 +33,9 @@ var change_button_state = function (s) {
 var timeout = null;
 
 var socket = io(document.URL);
-socket.on('card attach', function(data) {
-  $('#name').innerHTML = data;
-  $('#message').innerHTML = '';
-  // $('#name').innerHTML = data.id;
-  // $('#message').innerHTML = data.type;
+socket.on('authorized', function(data) {
+  $('#name').innerHTML = data.id;
+  $('#message').innerHTML = data.type;
   change_button_state('activate');
 });
 
