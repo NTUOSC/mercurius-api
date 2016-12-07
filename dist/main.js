@@ -26,7 +26,7 @@ var change_button_state = function (s) {
   }
 };
 
-var timeout;
+var timeout = null;
 
 var socket = io('http://vote.local');
 socket.on('card attach', function(data) {
@@ -41,6 +41,9 @@ socket.on('message', function(data) {
   $('#name').innerHTML = '';
   $('#message').innerHTML = l(data);
   change_button_state('deactivate');
+  if (timeout !== null){
+    clearTimeout(timeout);
+  }
   timeout = setTimeout(clear_message, 5000);
 });
 
