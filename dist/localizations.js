@@ -22,6 +22,7 @@ String.toLocaleString({
         "student_not_found": "查無此人",
         "reset_request_not_found": "找不到對應的重設要求。",
 
+        "connection_error": "網路異常",
         "online": "讀卡機連線成功。",
         "offline": "讀卡機連線失敗，請稍候再試。"
     }
