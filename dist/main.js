@@ -33,7 +33,7 @@ var change_button_state = function (s) {
 var timeout = null;
 
 var socket = io(document.URL);
-socket.on('authorized', function(data) {
+socket.on('authenticated', function(data) {
   $('#name').innerHTML = data.id;
   $('#message').innerHTML = data.type;
   change_button_state('activate');
