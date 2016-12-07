@@ -44,6 +44,10 @@ socket.on('message', function(data) {
   timeout = setTimeout(clear_message, 5000);
 });
 
+socket.on('station', function (data) {
+  $('#station').innerHTML = data;
+});
+
 // Connection ON
 socket.on('connect', function () {
   $('#status').innerHTML = l('online');
