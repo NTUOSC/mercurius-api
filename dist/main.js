@@ -32,7 +32,7 @@ var change_button_state = function (s) {
 
 var timeout = null;
 
-var socket = io('http://vote.local');
+var socket = io(document.URL);
 socket.on('card attach', function(data) {
   $('#name').innerHTML = data;
   $('#message').innerHTML = '';
