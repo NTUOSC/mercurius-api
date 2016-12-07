@@ -10,8 +10,8 @@ var l = function (string) {
 };
 
 var clear_message = function () {
-  $$('#message-box section').forEach(function (it) { it.innerHTML = '' });
-}
+  $$('#message-box section').forEach(function (it) { it.innerHTML = '';});
+};
 
 var change_button_state = function (s) {
   var valid_action = { 'activate' : true, 'deactivate' : false };
@@ -24,11 +24,11 @@ var change_button_state = function (s) {
     $('#reject').removeAttribute('disabled');
     $('#dismiss').setAttribute('disabled', true);
   }
-}
+};
 
 var timeout;
 
-var socket = io('http://localhost:8080');
+var socket = io('http://vote.local');
 socket.on('card attach', function(data) {
   $('#name').innerHTML = data;
   $('#message').innerHTML = '';
