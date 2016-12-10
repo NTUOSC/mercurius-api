@@ -56,7 +56,7 @@ socket.on('station', function (data) {
 // Connection ON
 socket.on('connect', function () {
   $('#status').innerHTML = l('online');
-  $('#status-box').className = 'online';
+  $('#status-box').className = '';
   change_button_state('default');
 });
 socket.on('reconnect', function () {
