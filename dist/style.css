@@ -1,11 +1,14 @@
 * {
   box-sizing: border-box;
+  color: inherit;
   font-family: Helvetica, 'Source Han Sans', 'Microsoft JhengHei', sans-serif;
   font-size: 24px;
+  line-height: 1;
   text-align: center;
 }
 
 body {
+  color: #434A54;
   margin: 0 auto;
   max-width: 36em;
   min-width: 24em;
@@ -13,29 +16,20 @@ body {
   width: 100%;
 }
 
-div.box-grid {
-  display: inline-block;
-  margin: -0.01em;
-  padding: 0.125em;
-}
-
-div.box-grid.g1-2 {
-  width: 50%;
-}
-
-div.box-grid.g1-2:nth-child(2) {
-  margin-left: -0.25em;
-}
-
-div.box-grid.g1-1 {
+.button-set {
+  display: table;
   width: 100%;
+}
+
+.button-cell {
+  display: table-cell;
+  padding: 0.25em;
 }
 
 button {
   border: none;
   border-radius: 5px;
   color: #FFF;
-  display: inline;
   padding: 0.5em 0.75em;
   width: 100%;
 }
@@ -70,7 +64,12 @@ button[disabled] {
 
 button:hover, button:active {
   background: #FFF !important;
-  color: #333;
+  color: #434A54;
+}
+
+button[disabled]:hover {
+  background: #BBB !important;
+  color: #FFF;
 }
 
 section {
@@ -81,14 +80,10 @@ section#status-box {
   border-bottom: #DDD 1px solid;
 }
 
-section#status-box.online {
-  color: #0B0;
-}
-
 section#status-box.offline {
-  color: #0B0;
+  color: #DA4453;
 }
 
 section#message-box {
-  height: 6em;
+  height: 8em;
 }

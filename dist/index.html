@@ -15,9 +15,13 @@
       <section id="message"></section>
     </section>
     <section id="button-box">
-      <div class="box-grid g1-2"><button id="accept" disabled>確認驗證</button></div>
-      <div class="box-grid g1-2"><button id="reject" disabled>終止驗證</button></div>
-      <div class="box-grid g1-1"><button id="dismiss">清除訊息</button></div>
+      <div id="authenticate-button" class="button-set">
+        <div class="button-cell"><button id="accept" disabled>確認驗證</button></div>
+        <div class="button-cell"><button id="reject" disabled>終止驗證</button></div>
+      </div>
+      <div id="clear-button" class="button-set">
+        <div class="button-cell"><button id="dismiss">清除訊息</button></div>
+      </div>
     </section>
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="json2.min.js"></script>
