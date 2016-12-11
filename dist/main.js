@@ -14,21 +14,33 @@ var l = function (string) {
 };
 
 var clear_message = function () {
-  for (var it of $$('#message-box section')) {
-    it.innerHTML = '';
+  for (var i = 0; i < $$('#message-box section').length; ++i) {
+    $$('#message-box section')[i].innerHTML = '';
   }
 };
 
 var change_button_state = function (s) {
   if (s === 'default') {
-    for (var it of $$('#authenticate-button button')) { it.setAttribute('disabled', true); }
-    for (var it of $$('#clear-button button')) { it.removeAttribute('disabled'); }
+    for (var i = 0; i < $$('#authenticate-button button').length; ++i) {
+      $$('#authenticate-button button')[i].setAttribute('disabled', true);
+    }
+    for (var i = 0; i < $$('#clear-button button').length; ++i) {
+      $$('#clear-button button')[i].removeAttribute('disabled');
+    }
   } else if (s === 'authenticated') {
-    for (var it of $$('#authenticate-button button')) { it.removeAttribute('disabled'); }
-    for (var it of $$('#clear-button button')) { it.setAttribute('disabled', true); }
+    for (var i = 0; i < $$('#authenticate-button button').length; ++i) {
+      $$('#authenticate-button button')[i].removeAttribute('disabled');
+    }
+    for (var i = 0; i < $$('#clear-button button').length; ++i) {
+      $$('#clear-button button')[i].setAttribute('disabled', true);
+    }
   } else if (s === 'offline') {
-    for (var it of $$('#authenticate-button button')) { it.setAttribute('disabled', true); }
-    for (var it of $$('#clear-button button')) { it.setAttribute('disabled', true); }
+    for (var i = 0; i < $$('#authenticate-button button').length; ++i) {
+      $$('#authenticate-button button')[i].setAttribute('disabled', true);
+    }
+    for (var i = 0; i < $$('#clear-button button').length; ++i) {
+      $$('#clear-button button')[i].setAttribute('disabled', true);
+    }
   }
 };
 
@@ -91,12 +103,12 @@ $('#dismiss').addEventListener('click', function (ev) {
   clearTimeout(timeout);
 });
 
-for (var it of $$('button')) {
+for (var i = 0; i < $$('button').length; ++i) {
   // active style
-  it.addEventListener('touchstart', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
-  it.addEventListener('mousedown', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
+  $$('button')[i].addEventListener('touchstart', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
+  $$('button')[i].addEventListener('mousedown', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
 
   // normal style
-  it.addEventListener('touchend', function (ev) { ev.preventDefault(); ev.target.className = ''; });
-  it.addEventListener('mouseup', function (ev) { ev.preventDefault(); ev.target.className = ''; });
+  $$('button')[i].addEventListener('touchend', function (ev) { ev.preventDefault(); ev.target.className = ''; });
+  $$('button')[i].addEventListener('mouseup', function (ev) { ev.preventDefault(); ev.target.className = ''; });
 }
