@@ -53,6 +53,12 @@ socket.on('authenticated', function(data) {
   change_button_state('authenticated');
 });
 
+socket.on('confirmed', function(data) {
+  $('#name').innerHTML = data.id;
+  $('#message').innerHTML = l('please go to station') + ' ' + data.slot;
+  change_button_state('authenticated');
+});
+
 socket.on('message', function(data) {
   $('#name').innerHTML = '';
   $('#message').innerHTML = l(data);
