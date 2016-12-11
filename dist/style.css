@@ -62,16 +62,6 @@ button[disabled] {
   background: #BBB !important;
 }
 
-button:hover, button:active {
-  background: #FFF !important;
-  color: #434A54;
-}
-
-button[disabled]:hover {
-  background: #BBB !important;
-  color: #FFF;
-}
-
 section {
   padding: 1em;
 }
