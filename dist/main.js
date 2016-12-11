@@ -91,7 +91,7 @@ $('#dismiss').addEventListener('click', function (ev) {
   clearTimeout(timeout);
 });
 
-for (var it in $$('button')) {
+for (var it of $$('button')) {
   // active style
   it.addEventListener('touchstart', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
   it.addEventListener('mousedown', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
