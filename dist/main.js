@@ -102,15 +102,3 @@ $('#dismiss').addEventListener('click', function (ev) {
   clear_message();
   clearTimeout(timeout);
 });
-
-/*
-for (var i = 0; i < $$('button').length; ++i) {
-  // active style
-  $$('button')[i].addEventListener('touchstart', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
-  $$('button')[i].addEventListener('mousedown', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
-
-  // normal style
-  $$('button')[i].addEventListener('touchend', function (ev) { ev.preventDefault(); ev.target.className = ''; });
-  $$('button')[i].addEventListener('mouseup', function (ev) { ev.preventDefault(); ev.target.className = ''; });
-}
-*/
