@@ -103,6 +103,7 @@ $('#dismiss').addEventListener('click', function (ev) {
   clearTimeout(timeout);
 });
 
+/*
 for (var i = 0; i < $$('button').length; ++i) {
   // active style
   $$('button')[i].addEventListener('touchstart', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
@@ -112,3 +113,4 @@ for (var i = 0; i < $$('button').length; ++i) {
   $$('button')[i].addEventListener('touchend', function (ev) { ev.preventDefault(); ev.target.className = ''; });
   $$('button')[i].addEventListener('mouseup', function (ev) { ev.preventDefault(); ev.target.className = ''; });
 }
+*/
