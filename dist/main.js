@@ -14,19 +14,21 @@ var l = function (string) {
 };
 
 var clear_message = function () {
-  $$('#message-box section').forEach(function (it) { it.innerHTML = ''; });
+  for (var it of $$('#message-box section')) {
+    it.innerHTML = '';
+  }
 };
 
 var change_button_state = function (s) {
   if (s === 'default') {
-    $$('#authenticate-button button').forEach(function (it) { it.setAttribute('disabled', true); });
-    $$('#clear-button button').forEach(function (it) { it.removeAttribute('disabled'); });
+    for (var it of $$('#authenticate-button button')) { it.setAttribute('disabled', true); }
+    for (var it of $$('#clear-button button')) { it.removeAttribute('disabled'); }
   } else if (s === 'authenticated') {
-    $$('#authenticate-button button').forEach(function (it) { it.removeAttribute('disabled'); });
-    $$('#clear-button button').forEach(function (it) { it.setAttribute('disabled', true); });
+    for (var it of $$('#authenticate-button button')) { it.removeAttribute('disabled'); }
+    for (var it of $$('#clear-button button')) { it.setAttribute('disabled', true); }
   } else if (s === 'offline') {
-    $$('#authenticate-button button').forEach(function (it) { it.setAttribute('disabled', true); });
-    $$('#clear-button button').forEach(function (it) { it.setAttribute('disabled', true); });
+    for (var it of $$('#authenticate-button button')) { it.setAttribute('disabled', true); }
+    for (var it of $$('#clear-button button')) { it.setAttribute('disabled', true); }
   }
 };
 
@@ -89,7 +91,7 @@ $('#dismiss').addEventListener('click', function (ev) {
   clearTimeout(timeout);
 });
 
-$$('button').forEach(function (it) {
+for (var it in $$('button')) {
   // active style
   it.addEventListener('touchstart', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
   it.addEventListener('mousedown', function (ev) { ev.preventDefault(); ev.target.className = 'active'; });
@@ -97,4 +99,4 @@ $$('button').forEach(function (it) {
   // normal style
   it.addEventListener('touchend', function (ev) { ev.preventDefault(); ev.target.className = ''; });
   it.addEventListener('mouseup', function (ev) { ev.preventDefault(); ev.target.className = ''; });
-});
+}
