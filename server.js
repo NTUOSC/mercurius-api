@@ -32,6 +32,6 @@ server.listen(PORT, (err) => {
     logger.info(`Server listening on port ${PORT}.`);
 });
 api.io.attach(server, {
-    'pingTimeout': 500,
-    'pingInterval': 3000
+    'pingTimeout': 2000,
+    'pingInterval': 5000
 });

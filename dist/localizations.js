@@ -22,6 +22,7 @@ String.toLocaleString({
         "student_not_found": "查無此人",
         "reset_request_not_found": "找不到對應的重設要求。",
 
+        "reject_success": "成功拒絕投票",
         "connection_error": "網路異常",
         "login_success": "登入成功",
         "online": "讀卡機連線成功。",
