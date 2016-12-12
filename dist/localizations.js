@@ -28,6 +28,7 @@ String.toLocaleString({
         "online": "讀卡機連線成功。",
         "offline": "讀卡機連線失敗，請稍候再試。",
 
-        "please go to station": "請前往平板"
+        "please go to station": "請前往平板",
+        "there are no more online-booth-tablet": "票亭已滿，請稍候再試"
     }
 });
