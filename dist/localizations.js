@@ -26,6 +26,8 @@ String.toLocaleString({
         "connection_error": "網路異常",
         "login_success": "登入成功",
         "online": "讀卡機連線成功。",
-        "offline": "讀卡機連線失敗，請稍候再試。"
+        "offline": "讀卡機連線失敗，請稍候再試。",
+
+        "please go to station": "請前往平板"
     }
 });
