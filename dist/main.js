@@ -54,7 +54,7 @@ socket.on('authenticated', function(data) {
 });
 
 socket.on('confirmed', function(data) {
-  $('#name').innerHTML = data.id;
+  $('#name').innerHTML = data.student_id;
   $('#message').innerHTML = l('please go to station') + ' ' + data.slot;
   change_button_state('authenticated');
 });
