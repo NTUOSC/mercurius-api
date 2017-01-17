@@ -5,6 +5,7 @@ var request = require('request');
 var Promise = require('bluebird');
 var winston = require('winston');
 var morgan = require('morgan');
+var bonjour = require('bonjour')();
 
 var logger = require('./lib/logger');
 
@@ -30,6 +31,9 @@ app.use('/api', api.router);
 server.listen(PORT, (err) => {
     if (err) throw err;
     logger.info(`Server listening on port ${PORT}.`);
+
+    // advertise an HTTP server
+    bonjour.publish({ name: 'Card Reader Server', host: 'vote.local', type: 'http', port: PORT  });
 });
 api.io.attach(server, {
     'pingTimeout': 2000,
