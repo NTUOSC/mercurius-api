@@ -23,7 +23,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 app
 .use( morgan('combined') )
-.use( express.static(__dirname + '/dist') )
+.use( express.static(`${__dirname}/dist`) )
 .use( require('body-parser').urlencoded({ extended: true }) )
 .use('/api', api.router)
 
