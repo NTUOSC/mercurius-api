@@ -1,5 +1,5 @@
 {
-  "name": "ntuosc-geocaching-2016",
+  "name": "mercurius-api",
   "version": "0.0.1",
   "description": "A RESTful backend of club geocaching (?) game 2016.",
   "main": "index.js",
@@ -18,13 +18,11 @@
   },
   "homepage": "https://github.com/andy0130tw/ntuosc-geocaching-2016#readme",
   "dependencies": {
-    "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "bonjour": "^3.5.0",
     "express": "^4.14.0",
     "lodash": "^4.17.4",
     "morgan": "^1.7.0",
-    "request": "^2.74.0",
     "request-promise": "^4.2.0",
     "socket.io": "^1.4.8",
     "winston": "^2.2.0"
