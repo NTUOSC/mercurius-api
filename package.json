@@ -1,22 +1,23 @@
 {
   "name": "mercurius-api",
   "version": "0.0.1",
-  "description": "A RESTful backend of club geocaching (?) game 2016.",
+  "description": "An API layer provided web interface for client card reader.",
   "main": "index.js",
-  "scripts": {
-    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andy0130tw/ntuosc-geocaching-2016.git"
+    "url": "git+https://github.com/NTUOSC/mercurius-union.git"
   },
-  "author": "Andy Pan",
+  "author": "azdkj532 <azdkj532@ntuosc.org>",
+  "contributors": [
+    "Hsu Karinsu <m80126colin@gmail.com>",
+    "katrina376 <katrina.hyc@gmail.com>",
+    "Andy Pan <andy0130tw@yahoo.com.tw>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andy0130tw/ntuosc-geocaching-2016/issues"
+    "url": "https://github.com/NTUOSC/mercurius-union/issues"
   },
-  "homepage": "https://github.com/andy0130tw/ntuosc-geocaching-2016#readme",
+  "homepage": "https://github.com/NTUOSC/mercurius-union#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "bonjour": "^3.5.0",
@@ -26,10 +27,5 @@
     "request-promise": "^4.2.0",
     "socket.io": "^1.4.8",
     "winston": "^2.2.0"
-  },
-  "devDependencies": {
-    "browserify": "^13.1.0",
-    "browserify-hmr": "^0.3.1",
-    "watchify": "^3.7.0"
   }
 }

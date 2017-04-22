@@ -1,0 +1,8 @@
+{
+    "AUTH_API_URL": "http://localhost:8000/api",
+    "VOTE_API_URL": "http://httpbin.org/post",
+    "AUTH_API_KEY": "test_api_key",
+    "VOTE_API_KEY": "",
+    "username": "station",
+    "password": "station"
+}
