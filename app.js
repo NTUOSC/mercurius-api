@@ -1,6 +1,7 @@
 const http    = require('http')
 const express = require('express')
 const morgan  = require('morgan')
+const parser  = require('body-parser')
 const bonjour = require('bonjour')()
 
 const config  = require('./config')
@@ -10,7 +11,7 @@ const app     = express()
 const server  = http.Server(app)
 const api     = require('./lib/api')
 
-const PORT    = config.PORT || 8080
+const PORT    = config.PORT || 9487
 
 // for the future
 const env = process.env.NODE_ENV || 'development'
@@ -18,8 +19,9 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 app
 .use( morgan('combined') )
-.use( express.static(`${__dirname}/dist`) )
-.use( require('body-parser').urlencoded({ extended: true }) )
+.use( express.static(`${__dirname}/panel/dist`) )
+.use( parser.urlencoded({ extended: true }) )
+// api layer
 .use('/api', api.router)
 
 server
