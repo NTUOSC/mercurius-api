@@ -1,22 +1,21 @@
 {
-  "name": "ntuosc-geocaching-2016",
-  "version": "0.0.1",
-  "description": "A RESTful backend of club geocaching (?) game 2016.",
+  "name": "NTU voting card reader",
+  "version": "0.1.1",
+  "description": "A backend for card reader",
   "main": "index.js",
   "scripts": {
-    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andy0130tw/ntuosc-geocaching-2016.git"
+    "url": "git+https://github.com/NTUOSC/mercurius-union.git"
   },
   "author": "Andy Pan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andy0130tw/ntuosc-geocaching-2016/issues"
+    "url": "https://github.com/NTUOSC/mercurius-union/issues"
   },
-  "homepage": "https://github.com/andy0130tw/ntuosc-geocaching-2016#readme",
+  "homepage": "https://github.com/NTUOSC/mercurius-union#readme",
   "dependencies": {
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
