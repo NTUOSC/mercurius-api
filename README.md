@@ -29,12 +29,12 @@ A raw string.
 ### disconnect
 
 ## HTTP URI
-### `/update`
+### `/api/update`
 Receive infomation of the card here.
 - student_id
 - card_id
 
-### `/login`
+### `/api/login`
 For login [auth server]
 - username
 - password
