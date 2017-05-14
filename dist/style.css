@@ -77,3 +77,19 @@ section#status-box.offline {
 section#message-box {
   height: 8em;
 }
+
+section#station-box > .station {
+    background-color: #BBB;
+    height: 3em;
+    width: 3em;
+    margin: 1em;
+    display: inline-block;
+    text-align: center;
+}
+
+section#station-box > .free {
+    background-color: #A0D468;
+}
+section#station-box > .lock {
+    background-color: #FFD95F;
+}

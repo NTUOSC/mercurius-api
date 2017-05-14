@@ -1,7 +1,8 @@
 {
-  "name": "mercurius-api",
-  "version": "0.0.1",
-  "description": "An API layer provided web interface for client card reader.",
+  "name": "mercurius-union",
+  "private": true,
+  "version": "0.1.1",
+  "description": "A backend layer for client card reader.",
   "main": "index.js",
   "repository": {
     "type": "git",
