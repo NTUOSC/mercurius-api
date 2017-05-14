@@ -1,0 +1,3 @@
+[submodule "panel"]
+	path = panel
+	url = git@github.com:NTUOSC/mercurius-panel.git

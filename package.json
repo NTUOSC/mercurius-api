@@ -1,34 +1,31 @@
 {
-  "name": "NTU voting card reader",
-  "version": "0.1.1",
-  "description": "A backend for card reader",
+  "name": "mercurius-api",
+  "version": "0.0.1",
+  "description": "An API layer provided web interface for client card reader.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NTUOSC/mercurius-union.git"
   },
-  "author": "Andy Pan",
+  "author": "azdkj532 <azdkj532@ntuosc.org>",
+  "contributors": [
+    "Hsu Karinsu <m80126colin@gmail.com>",
+    "katrina376 <katrina.hyc@gmail.com>",
+    "Andy Pan <andy0130tw@yahoo.com.tw>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/NTUOSC/mercurius-union/issues"
   },
   "homepage": "https://github.com/NTUOSC/mercurius-union#readme",
   "dependencies": {
-    "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "bonjour": "^3.5.0",
     "express": "^4.14.0",
+    "lodash": "^4.17.4",
     "morgan": "^1.7.0",
-    "request": "^2.74.0",
+    "request-promise": "^4.2.0",
     "socket.io": "^1.4.8",
     "winston": "^2.2.0"
-  },
-  "devDependencies": {
-    "browserify": "^13.1.0",
-    "browserify-hmr": "^0.3.1",
-    "watchify": "^3.7.0"
   }
 }
