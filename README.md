@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Mercurius Union
 This repo is an api layer on card reader, it controls the whole authentication procdure of voting. Mrecurius-union interacts with staff through web front-end ([mercurius-panel]) and sending reqest to [auth server] and [vote server], in addition, it receives card id of student id card from another card reader project through standard HTTP request.
 
