@@ -1,4 +1,5 @@
 # Mercurius Union
+
 This repo is an api layer on card reader, it controls the whole authentication procdure of voting. Mrecurius-union interacts with staff through web front-end ([mercurius-panel]) and sending reqest to [auth server] and [vote server], in addition, it receives card id of student id card from another card reader project through standard HTTP request.
 
 ## Terminology
@@ -13,7 +14,9 @@ The content format is JSON encoded by default.
 
 ### authenticated (card reader -> client)
 Emit this event when a student identity card is been accepted by [auth server]. Then the client can emit a event respectively to accept or reject this student id card.
+
 #### Data format
+
 - id
 - type
 - department
@@ -32,7 +35,9 @@ Inform that card is been attached.
 A raw string contains student id.
 
 ### station (card reader -> client)
+
 Station name.
+
 A raw string. 
 
 ### accept / confirm (client -> card reader)
@@ -47,26 +52,31 @@ Clear message
 ### disconnect
 
 ## HTTP URI
+
 ### `/api/update`
+
 Receive infomation of the card here.
+
 - student_id
 - card_id
 
 ### `/api/login`
+
 For login [auth server]
+
 - username
 - password
 
-[auth server]: https://github.com/NTUOSC/ntu-vote-auth-server
-[vote server]: http://github.com/mousems/NTUvoteV2
-[mercurius-panel]: https://github.com/NTUOSC/mercurius-panel
-
-# Author
+## Author
 
 Squirrel a.k.a. azdkj532
 
-# Contributors
+## Contributors
 
 * Andy Pan
 * Katrina Chan
 * Hsu Karinsu
+
+[auth server]: https://github.com/NTUOSC/ntu-vote-auth-server
+[vote server]: http://github.com/mousems/NTUvoteV2
+[mercurius-panel]: https://github.com/NTUOSC/mercurius-panel
