@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/NTUOSC/mercurius-union#readme",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.15.2",
     "bonjour": "^3.5.0",
     "express": "^4.14.0",
