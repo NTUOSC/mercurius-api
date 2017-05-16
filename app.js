@@ -9,7 +9,7 @@ const logger  = require('./lib/logger')
 
 const app     = express()
 const server  = http.Server(app)
-const api     = require('./lib/api')
+const api     = require('./lib')
 
 const PORT    = config.PORT || 9487
 

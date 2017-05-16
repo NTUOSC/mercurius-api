@@ -1,5 +1,6 @@
 {
   "name": "mercurius-api",
+  "private": true,
   "version": "0.0.1",
   "description": "An API layer provided web interface for client card reader.",
   "main": "index.js",
@@ -19,11 +20,13 @@
   },
   "homepage": "https://github.com/NTUOSC/mercurius-union#readme",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.15.2",
     "bonjour": "^3.5.0",
     "express": "^4.14.0",
     "lodash": "^4.17.4",
     "morgan": "^1.7.0",
+    "request": "^2.81.0",
     "request-promise": "^4.2.0",
     "request": "^2.34",
     "socket.io": "^1.4.8",
